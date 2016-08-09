@@ -3,16 +3,16 @@
 * This HTML5 application, built with [Brunch](http://brunch.io).
 
 ## Getting started
-### Install and/or update:
+### Install and/or update dependencies:
 * [Node.js](http://nodejs.org), via [homebrew](http://brew.sh/): `brew install node`
-* Install [Brunch](http://brunch.io) globally: `npm install -g brunch` or `sudo npm install -g brunch`
+* Install [Brunch](http://brunch.io) globally: `npm install -g brunch`
 
 ### Initialize
 * `brunch new project_name -s kgcreative/brunch-with-cocktails`
 * This command will:
   * Create directory `project_name`
   * Clone git repo `git://github.com/kgcreative/brunch-with-cocktails` to the dir. The Git URL is basically the full name of the "brunch-with-cocktails" skeleton.
- * Run npm install to install app dependencies and brunch plugins
+ * Run `npm install` to install app dependencies and brunch plugins
 
 ### Configure:
 * If you need to add plugins or modules to this instance of brunch, you can do so via `npm install --save module`
