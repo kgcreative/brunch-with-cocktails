@@ -4,11 +4,11 @@ This HTML5 application, built with [Brunch](http://brunch.io).
 
 ## Getting started
 ### Install (if you don't have them):
-* [Node.js](http://nodejs.org): `brew install node` on OS X terminal (if you don't have homebrew installed, do so via http://brew.sh/ )
-* [Brunch](http://brunch.io): Install brunch globally `npm install -g brunch` or `sudo npm install -g brunch`
+* [Node.js](http://nodejs.org): `brew install node` on OS X terminal (if you don't have homebrew installed, do so via http://brew.sh/ – You may need to update homebrew.)
+* Install [Brunch](http://brunch.io) globally: `npm install -g brunch` or `sudo npm install -g brunch`
 
 ### Initialize
-* `brunch new project_name --skeleton kgcreative/brunch-with-cocktails`
+* `brunch new project_name -s kgcreative/brunch-with-cocktails`
 * This command will:
   * Create directory `project_name`
   * Clone git repo `git://github.com/kgcreative/brunch-with-cocktails` to the dir. The Git URL is basically full name of the "brunch-with-cocktails" skeleton.
@@ -17,7 +17,7 @@ This HTML5 application, built with [Brunch](http://brunch.io).
 ### Configure:
 * If you need to add plugins or modules to this instance of brunch, you can do so via `npm install --save module`
 * Plugin and module configurations are added to brunch-config.js
-* If you cloned or forked the repo instead of installing via the skeleton above, you can run `npm install` to install app dependencies and brunch plugins.
+* If you cloned or forked this repo instead of installing via the skeleton above, you can run `npm install` to install app dependencies and brunch plugins.
 
 ### Run:
 * `brunch watch --server --port 3333` — watches the project with continuous rebuild. This will also launch HTTP server with [pushState](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history) at [localhost:3333](http://localhost:3333).
