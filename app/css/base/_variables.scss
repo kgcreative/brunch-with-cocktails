@@ -1,6 +1,4 @@
-// Breakpoints
-$medium-screen: $medium-screen; // inherits from _grid-settings.css
-$large-screen: $large-screen; // inherits from _grid-settings.css
+// Breakpoints have been moved to _grid-settings.scss, which is loaded before /base and Neat.
 
 // Typography
 $base-font-family: $font-stack-system; // Default bourbon stack

@@ -12,3 +12,7 @@ html {
 .container {
 	@include outer-container;
 }
+
+.content {
+	padding: 1em;
+}
