@@ -1,0 +1,75 @@
+---
+title: README | Brunch | Brunch with Cocktails
+page-id: readme
+current-nav-item: Readme
+
+_options:
+  layout: app/layouts/main.static.hbs
+---
+<article>
+<header>
+  <time datetime="2016-09-29T17:00:00+00:00">Updated: Dec 30, 2016</time>
+  <h1>Brunch with Cocktails</h1>
+
+  <ul>
+  <li>This HTML5 application, built with <a href="http://brunch.io">Brunch</a>.</li>
+  </ul>
+</header>
+<section>
+  <h2>Install and/or update:</h2>
+
+  <ul>
+  <li><a href="http://nodejs.org">Node.js</a>. (On macOS, you may use <a href="http://brew.sh/">homebrew</a>: <code>brew install node</code>)</li>
+  <li><a href="http://brunch.io">Brunch</a>: Install brunch globally <code>npm install -g brunch</code> or <code>sudo npm install -g brunch</code></li>
+  </ul>
+</section>
+<section>
+<h2>Initialize</h2>
+
+  <ul>
+  <li>Once Node.js and Brunch are installed,</li>
+  <p class="meta">Git clone:</p>
+  <li>Clone this git repo <code>https://github.com/kgcreative/brunch-with-cocktails.git</code> to a target directory, then create a branch for your project. Please don't commit back to master.</li>
+  <li>Run <code>npm install</code> to install app dependencies and brunch plugins</li>
+  <p class="meta">Or:</p>
+  <li><code>brunch new $project_name -s kgcreative/brunch-with-cocktails</code></li>
+  <ul>
+  <p class="meta">This command will:</p>
+  <li>Create directory <code>$project_name</code></li>
+  <li>Clone git repo <code>https://github.com/kgcreative/brunch-with-cocktails.git</code> to the dir. The Git URL is basically the full name of our "brunch-with-cocktails" skeleton.</li>
+  <li>Run <code>npm install</code> to install app dependencies and brunch plugins</li>
+  </ul>
+  </ul>
+</section>
+<section>
+<h2>Configure:</h2>
+
+  <ul>
+  <li>If you need to add plugins or modules to this instance of brunch, you can do so via <code>npm install --save $module</code> or <code>npm install --save-dev $module</code></li>
+  <li>Plugins and modules are added to <code>package.json</code></li>
+  <li>Plugins and modules are configured via <code>brunch-config.coffee</code></li>
+  </ul>
+</section>
+<section>
+  <h2>Run:</h2>
+
+  <ul>
+  <li><code>npm start</code> - Runs the <code>brunch watch --server --port 3333</code> command to watch the project with continuous rebuild. This will also launch HTTP server with <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history">pushState</a> at <a href="http://localhost:3333">localhost:3333</a>.</li>
+  <li><code>brunch build --production</code> builds the minified project for production</li>
+  </ul>
+</section>
+<section>
+  <h2>Learn:</h2>
+
+  <ul>
+  <li><code>public/</code> dir is fully auto-generated and served by HTTP server.  Write your code in <code>app/</code> dir.</li>
+  <li>Place static files you want to be copied from <code>app/assets/</code> to <code>public/</code>.</li>
+  <li><a href="http://handlebarsjs.com">Handlebars</a> Static site templating structure is written in <code>app/layouts</code>, <code>app/partials</code>, and <code>app/pages</code>, and output to <code>public</code> by <a href="http://handlebarsjs.com/">handlebars</a> and <a href="https://github.com/bmatcuk/html-brunch-static">html-brunch-static</a>.</li>
+  <li><a href="http://brunch.io">Brunch</a> mixin library: <a href="https://github.com/brunch/brunch-guide#readme">Getting started guide</a></li>
+  <li><a href="http://bourbon.io%5D">Bourbon</a> and <a href="http://neat.bourbon.io/">Neat</a> were installed via NPM (not ruby)</li>
+  <li>The <a href="http://bitters.bourbon.io/">Bitters</a> scaffold was imported via ruby and customized to fit the <a href="http://sass-guidelin.es/#architecture">7-1 architecture pattern</a>.</li>
+  <li><a href="https://github.com/bmatcuk/html-brunch-static">html-brunch-static</a> enables <a href="http://handlebarsjs.com/">handlebars</a> precompiled templates.</li>
+   <li><a href="https://github.com/postcss/postcss">postcss</a> <a href="https://github.com/postcss/autoprefixer">autoprefixer</a> uses the <a href="http://caniuse.com/">can-i-use</a> database to vendor prefix current CSS spec for backward compatibility.</li>
+  </ul>
+</section>
+</article>

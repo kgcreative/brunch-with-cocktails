@@ -1,0 +1,23 @@
+<ul class="nav-menu">
+{{#each nav-item}}
+  <li class="nav-item{{#ifEq name ../current-nav-item}} current{{else}}{{#if subnav-group}}{{#each subnav-group}}{{#each subnav-item}}{{#ifEq name ../../../current-nav-item}} current{{/ifEq}}{{/each}}{{/each}}{{/if}}{{/ifEq}}">
+    <a href="{{#if url}}{{url}}{{~else}}#{{/if~}}">{{~name~}}</a>
+    {{#if subnav-group}}
+      {{#each subnav-group}}
+      <div class="sub-nav">
+        <ul>
+        {{#each subnav-item}}
+              <li{{#ifEq name ../../../current-nav-item}} class="current"{{/ifEq~}}>
+                <a href="{{#if url}}{{url}}
+                         {{~else}}#{{/if~}}">
+                         {{~name~}}
+                </a>
+              </li>
+        {{/each}}
+        </ul>
+      </div>
+      {{/each}}
+    {{/if}}
+  </li>
+{{/each}}
+</ul>

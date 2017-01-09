@@ -1,0 +1,12 @@
+{{#if analytics-id}}
+{{#ifEq analytics-id 'UA-XXXXX-Y'}}
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID in `/layouts/main.static.hbs` -->
+{{else}}
+<script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', '{{analytics-id}}', 'auto');
+  ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+{{/ifEq}}
+{{/if}}

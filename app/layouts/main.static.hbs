@@ -1,0 +1,62 @@
+---
+"nav-item":
+  [
+    {
+    "name": "Home",
+    "url": "index.html"
+    },
+    {
+    "name": "Examples",
+    "url": "#",
+    "subnav-group":
+      [
+        {
+        "subnav-item":
+          [
+            {
+              "name": "Elements"
+            },
+            {
+              "name": "Components",
+              "url": "#"
+            }
+          ]
+        }
+      ]
+    },
+    {
+    "name": "Readme",
+    "url": "readme.html"
+    }
+  ]
+
+analytics-id: UA-XXXXX-Y
+
+_options:
+  partials:
+    - app/partials/analytics.static.hbs
+    - app/partials/head.static.hbs
+    - app/partials/header.static.hbs
+    - app/partials/nav.static.hbs
+    - app/partials/fat-footer.static.hbs
+---
+<!DOCTYPE html>
+<html>
+  <head>
+  {{>head}}
+  </head>
+  <body {{#if page-id}}id="{{page-id}}"{{/if~}} class="{{#if has-sidebar}}with-sidebar {{/if~}}{{page-classes}}">
+    <header role="banner" data-ga-category="header">
+      {{>header}}
+    </header>
+    <nav id="primary-nav">
+      {{>nav}}
+    </nav>
+    <main id="main">
+      {{content}}
+    </main>
+    <footer>
+    {{>fat-footer}}
+    </footer>
+  </body>
+</html>
