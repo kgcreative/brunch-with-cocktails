@@ -18,6 +18,8 @@
 .tmproj
 nbproject
 Thumbs.db
+.idea
+.idea/
 
 # NPM packages folder.
 node_modules/
