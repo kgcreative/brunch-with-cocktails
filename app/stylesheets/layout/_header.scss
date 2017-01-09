@@ -1,0 +1,77 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+
+#skiplinks {
+  // Generic settings. Configure these variables in _variables.scss
+  $skiplinks__bg-color: color(generic, dark-grey) !default;
+  $skiplinks__fg-color: color(generic , white) !default;
+
+  // Map local variables to global names (makes it easier to read)
+  $_bg-color: $skiplinks__bg-color;
+  $_fg-color: $skiplinks__bg-color;
+
+  @extend %hidden-print;
+  @include grid-container;
+  background-color: $_bg-color;
+  color: $_fg-color;
+  font-family: $base-font-family;
+  font-weight: 300;
+  padding: 0;
+  min-height: 1px;
+
+  a,
+  a:hover,
+  a:visited {
+    position: absolute;
+    left: 0px;
+    top: -500px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  a:active, a:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    color: $_fg-color;
+  }
+}
+
+#header__content {
+    // Generic settings. Configure these variables in _variables.scss
+  $header__bg-color: color(generic, dark-grey) !default;
+  $header__bg-color: color(generic , white) !default;
+  $header__font-size: 2em !default;
+  $header__font-family: $heading-font-family;
+
+  // Map local variables to global names (makes it easier to read)
+  $_bg-color: $header__bg-color;
+  $_fg-color: $header__fg-color;
+  $_font-size: $header__font-size;
+  $_font-family: $header__font-family;
+
+  //properties
+  background-color: $_bg-color;
+  color: $_fg-color;
+  padding: .25em 0.5em;
+  font-size: $_font-size;
+  font-family: $_font-family;
+
+  a {
+    color: inherit;
+  }
+
+  #header__logo {
+    display: inline-block;
+    margin-right: 0.5em;
+  }
+
+  #header__name {
+    display: inline-block;
+  }
+
+
+}
