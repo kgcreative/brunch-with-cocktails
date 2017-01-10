@@ -32,7 +32,7 @@
     "brunch-static": "^1.2.1",
     "clean-css-brunch": "^2.0.0",
     "coffee-script-brunch": "^2.1.0",
-    "font-awesome": "^4.6.3",
+    "font-awesome": "^4.7.0",
     "html-brunch-static": "^1.3.1",
     "javascript-brunch": "^2.0.0",
     "postcss-brunch": "brunch/postcss-brunch#07961d39cecfbc9aa02b48259bb551e56defd4e8",
