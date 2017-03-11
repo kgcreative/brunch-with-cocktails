@@ -9,7 +9,7 @@
 
 ### Initialize
 * Once Node.js and Brunch are installed,
-* Clone this git repo `https://github.com/kgcreative/brunch-with-cocktails.git`
+* Clone this git repo `https://github.com/kgcreative/brunch-with-cocktails.git#decanter`
 * Run `npm install` to install app dependencies and brunch plugins
 
 ### Configure:
