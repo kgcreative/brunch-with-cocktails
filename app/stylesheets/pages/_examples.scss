@@ -3,3 +3,19 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+#examples {
+  article {
+    @include responsive-container($full-container);
+  }
+
+  .stories {
+    @include grid-container;
+    @include grid-collapse;
+    @include items-per-row(3, '.story');
+    
+    .story {
+      padding: modular-scale(1);
+      background-color: color(background-secondary);  
+    }
+  }
+}

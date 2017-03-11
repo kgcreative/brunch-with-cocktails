@@ -6,31 +6,25 @@
 // Stanford Web Services, Stanford University
 // -----------------------------------------------------------------------------
 
-//
-// 0.1. Plain Decanter
-@import 'decanter';
-//
-
-// 0.2 Integrated Decanter
+// Integrated Decanter
 // 1. Configuration and helpers
-// @import
-// 'vendors/decanter-vendors'
-//   , 'utilities/variables/global-settings'
-//   , 'utilities/decanter-utilities'
-//   , 'utilities/variables/variables'
-// ;
+@import
+   'vendors/decanter-vendors'
+ , 'utilities/decanter-utilities'
+ , 'utilities/variables/variables' // Your project's variables and settings
+;
 
 // 3. Base stuff
-// @import
-//     'base/decanter-base'
-//   , 'base/typography' // Local override
-//   , 'base/placeholders'
-// ;
+@import
+    'base/decanter-base'
+  , 'base/typography' // Local override
+  , 'base/placeholders'
+;
 
 // 4. Components
-// @import
-//     'components/decanter-components'
-// ;
+@import
+    'components/decanter-components'
+;
 
 // 5. Layout-related sections
 @import
