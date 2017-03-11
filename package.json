@@ -1,4 +1,3 @@
-
 {
   "name": "brunch-with-cocktails",
   "description": "Brunch with Cocktails. Brunch, bourbon, neat, handlebars, html-brunch-static, postcss, autoprefixer",
@@ -6,8 +5,8 @@
   "version": "1.0.1",
   "contributors": [
     {
-    "name": "Kevin Garcia",
-    "email": "kevin@kgcreative.com"
+      "name": "Kevin Garcia",
+      "email": "kevin@kgcreative.com"
     }
   ],
   "repository": {
@@ -20,23 +19,25 @@
   },
   "dependencies": {
     "fastclick": "^1.0.6",
-    "jquery": "^3.1.1",
-    "normalize.css": "^5.0.0"
+    "jquery": "^3.1.1"
   },
   "devDependencies": {
     "auto-reload-brunch": "^2.0.5",
     "autoprefixer": "^6.5.1",
-    "bourbon": "^=5.0.0-beta.7",
-    "bourbon-neat": "^=2.0.0-beta.1",
+    "bourbon": "^5.0.0-beta.7",
+    "bourbon-neat": "^2.0.0",
     "brunch": "brunch/brunch#ee73ef0f92add24b46c4478fa3f0b5bc206bbe7d",
     "brunch-static": "^1.2.1",
-    "clean-css-brunch": "^2.0.0",
+    "clean-css-brunch": "^2.10.0",
     "coffee-script-brunch": "^2.1.0",
+    "decanter": "github:SU-SWS/decanter.git#ef080a3ea540edd23ecd1a183ac7e84ee00341f2",
     "font-awesome": "^4.7.0",
     "html-brunch-static": "^1.3.1",
-    "javascript-brunch": "^2.0.0",
+    "javascript-brunch": "^2.10.0",
+    "node-sass": "^4.5.0",
+    "normalize.css": "^5.0.0",
     "postcss-brunch": "brunch/postcss-brunch#07961d39cecfbc9aa02b48259bb551e56defd4e8",
-    "sass-brunch": "^2.7.0",
+    "sass-brunch": "^2.10.4",
     "uglify-js-brunch": "^2.0.0"
   },
   "license": "MIT"

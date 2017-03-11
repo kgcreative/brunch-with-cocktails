@@ -1,0 +1,99 @@
+@charset "UTF-8";
+// Generic settings. Configure these variables in _variables.scss
+$site-nav__font-family: $heading-font-family !default;
+$site-nav__height: 4rem !default;
+
+
+#site-navigation {
+  // Map local variables to global names (makes it easier to read)
+  $_font-family: $site-nav__font-family;
+  $_height: $site-nav__height;
+
+  @if function-exists(responsive-container) {
+    @if global-variable-exists(chrome-container) {
+      @include responsive-container($chrome-container);
+    } @else {
+      @include responsive-container($default-container);
+    } 
+  }
+  height: $_height;
+  line-height: 1.8;
+  width: 100%;
+  @include font-size(modular-scale(1));
+  font-weight: 400;
+  
+  text-align: center;
+
+  ul {
+    @extend ul.plain;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: $small-spacing;
+    margin-bottom: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: color(text);
+    position: relative;
+    padding-bottom: em(9px, modular-scale(1));
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      bottom: 3px;
+      left: 0;
+      background-color: color(action-active);
+      visibility: hidden;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s;
+    }
+
+    @at-root .home & {
+      color: color(reverse-text);
+
+      &:after {
+        background-color: color(background-secondary);
+      }
+    }
+
+    @include on-event {
+      color: color(action-active);
+      text-decoration: none;
+      &:after {
+        visibility: visible;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+
+      @at-root .home & {
+        color: color(background-secondary);
+      }
+
+    }
+  }
+
+  .current a {
+    color: color(action-active);
+  }
+
+  .nav-item .sub-nav {
+    display: none;
+    position: absolute;
+    li {
+      display: block;
+    }
+  }
+}
+

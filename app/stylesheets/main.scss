@@ -1,56 +1,49 @@
 @charset "UTF-8";
 
+// -----------------------------------------------------------------------------
+// Decanter Demo
+// University Communications, Stanford University
+// Stanford Web Services, Stanford University
+// -----------------------------------------------------------------------------
 
+//
+// 0.1. Plain Decanter
+@import 'decanter';
+//
+
+// 0.2 Integrated Decanter
 // 1. Configuration and helpers
-@import
-  'utilities/constants',
-  'utilities/core-functions',
-  'bourbon',
-  'utilities/grid-settings',
-  'neat',
-  'utilities/variables',
-    // 'overrides/variables', //If you need to change any core variables, this is where to do so without introducing breaking changes.
-  'utilities/functions',
-  'utilities/mixins'
-;
-
-// 2. Vendors
-@import
-  'normalize',
-  /** End Normalize **/
-  'font-awesome'
-;
+// @import
+// 'vendors/decanter-vendors'
+//   , 'utilities/variables/global-settings'
+//   , 'utilities/decanter-utilities'
+//   , 'utilities/variables/variables'
+// ;
 
 // 3. Base stuff
+// @import
+//     'base/decanter-base'
+//   , 'base/typography' // Local override
+//   , 'base/placeholders'
+// ;
+
+// 4. Components
+// @import
+//     'components/decanter-components'
+// ;
+
+// 5. Layout-related sections
 @import
-  'base/base',
-
-  'base/buttons',
-  'base/forms',
-  'base/lists',
-  'base/media',
-  'base/tables',
-  'base/fonts',
-  'base/typography',
-
-  'base/helpers'
+    'layout/layout'
+  , 'layout/header'
+  , 'layout/navigation'
+  , 'layout/footer'
 ;
-
-// 4. Layout-related sections
-@import
-  'layout/layout',
-  'layout/header',
-  'layout/footer'
-;
-
-// 5. Components
 
 // 6. Page-specific styles
 @import
-  'pages/home'
+    'pages/home'
+  , 'pages/examples'
 ;
 
 // 7. Themes
-@import
-  'themes/default'
-;

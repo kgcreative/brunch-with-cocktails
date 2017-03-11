@@ -1,4 +1,5 @@
 body {
+  height: auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -14,17 +15,28 @@ body {
 //   50   footer
 //
 
-body > header { order: -50; }
-body > nav { order: -40; }
-body > main { order: 1; }
-body > footer { order: 50; }
+body > header { order: -50; z-index: 2; }
+body > #skiplinks { order: -51; }
+body > nav { order: -40; z-index: 2; }
+body > main { order: 1; z-index: 1; }
+body > footer { order: 50; z-index: 2; }
 
 main {
   overflow: hidden;
-  background-color: $base-background-color;
+  background-color: color(background);
   flex: 1;
 
-  @media print {
-    background: transparent;
+  article {
+    @if mixin-exists(responsive-container) {
+      @if global-variable-exists(content-container) {
+        @include responsive-container($content-container);  
+      } @else {
+        @include responsive-container($default-container);
+      } 
+    }
   }
+}
+
+[tabindex="-1"]:focus {
+  outline: 0;
 }

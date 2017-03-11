@@ -38,6 +38,8 @@ exports.config =
         , 'node_modules/bourbon-neat/core'
         , 'node_modules/normalize.css'
         , 'node_modules/font-awesome/scss'
+        , 'node_modules/decanter/core'
+        , 'node_modules/neat-omega/'
         ]
       # Set the precision for arithmetic operations.
       precision: 8

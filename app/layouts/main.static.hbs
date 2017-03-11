@@ -7,22 +7,7 @@
     },
     {
     "name": "Examples",
-    "url": "#",
-    "subnav-group":
-      [
-        {
-        "subnav-item":
-          [
-            {
-              "name": "Elements"
-            },
-            {
-              "name": "Components",
-              "url": "#"
-            }
-          ]
-        }
-      ]
+    "url": "examples.html",
     },
     {
     "name": "Readme",
@@ -30,6 +15,7 @@
     }
   ]
 
+site-name: Decanter
 analytics-id: UA-XXXXX-Y
 
 _options:
@@ -38,7 +24,7 @@ _options:
     - app/partials/head.static.hbs
     - app/partials/header.static.hbs
     - app/partials/nav.static.hbs
-    - app/partials/fat-footer.static.hbs
+    - app/partials/footer.static.hbs
 ---
 <!DOCTYPE html>
 <html>
@@ -49,14 +35,14 @@ _options:
     <header role="banner" data-ga-category="header">
       {{>header}}
     </header>
-    <nav id="primary-nav">
+    <nav id="site-navigation">
       {{>nav}}
     </nav>
-    <main id="main">
+    <main>
       {{content}}
     </main>
     <footer>
-    {{>fat-footer}}
+    {{>footer}}
     </footer>
   </body>
 </html>

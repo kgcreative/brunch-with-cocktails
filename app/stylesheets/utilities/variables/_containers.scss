@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+// Homesite containers
+$base-padding: modular-scale(1);
+
+$chrome-container: (
+    md:     ( columns: 12,  grid-media: $media-md-max, v-space: 0, max-width: false, grid-collapse: false ),
+    lg:     ( columns: 12,  grid-media: $media-lg-only, v-space: 0, max-width: false, grid-collapse: false ),
+    xl:     ( columns: 12,  grid-media: $media-xl,      v-space: 0, max-width: true,  grid-collapse: false ),
+    print:  ( columns: 12,  grid-media: $media-print,   v-space: 0, max-width: false,  grid-collapse: false ),
+);
+
+$content-container: (
+    xs:     ( columns: 12,  grid-media: $media-xs-only, v-space: $base-padding, max-width: false, grid-collapse: false ),
+    sm:     ( columns: 9,   grid-media: $media-sm-only, v-space: $base-padding, max-width: false, grid-collapse: false ),
+    md:     ( columns: 8,   grid-media: $media-md-only, v-space: $base-padding, max-width: false, grid-collapse: false ),
+    lg:     ( columns: 7.5, grid-media: $media-lg-only, v-space: $base-padding, max-width: false, grid-collapse: false ),
+    xl:     ( columns: 7,   grid-media: $media-xl,      v-space: $base-padding, max-width: true,  grid-collapse: false ),
+    print:  ( columns: 9,  grid-media: $media-print,   v-space: $base-padding, max-width: false,  grid-collapse: false ),
+);
+
+$full-container: (
+    md:     ( columns: 12,  grid-media: $media-md-max,  v-space: $base-padding, max-width: false, grid-collapse: false ),
+    lg:     ( columns: 12,  grid-media: $media-lg-only, v-space: $base-padding, max-width: false, grid-collapse: false ),
+    xl:     ( columns: 12,  grid-media: $media-xl,      v-space: $base-padding, max-width: true,  grid-collapse: false ),
+    print:  ( columns: 12,  grid-media: $media-print,   v-space: $base-padding, max-width: false,  grid-collapse: false ),
+);
+
+$edge-to-edge-container: (
+    md:     ( columns: 12,  grid-media: $media-md-max,  v-space: $base-padding, max-width: false, grid-collapse: false ),
+    lg:     ( columns: 12,  grid-media: $media-lg-only, v-space: $base-padding, max-width: false, grid-collapse: false ),
+    xl:     ( columns: 12,  grid-media: $media-xl,      v-space: $base-padding, max-width: false, grid-collapse: false ),
+    print:  ( columns: 12,  grid-media: $media-print,   v-space: $base-padding, max-width: false, grid-collapse: false ),
+);
+
+$collapsed-edge-to-edge-container: (
+    md:     ( columns: 12,  grid-media: $media-md-max,  v-space: $base-padding, max-width: false, grid-collapse: true ),
+    lg:     ( columns: 12,  grid-media: $media-lg-only, v-space: $base-padding, max-width: false, grid-collapse: true ),
+    xl:     ( columns: 12,  grid-media: $media-xl,      v-space: $base-padding, max-width: false, grid-collapse: true ),
+    print:  ( columns: 12,  grid-media: $media-print,   v-space: $base-padding, max-width: false, grid-collapse: true ),
+);
+
+$collapsed-full-container: (
+    md:     ( columns: 12,  grid-media: $media-md-max,  v-space: $base-padding, max-width: false, grid-collapse: true ),
+    lg:     ( columns: 12,  grid-media: $media-lg-only, v-space: $base-padding, max-width: false, grid-collapse: true ),
+    xl:     ( columns: 12,  grid-media: $media-xl,      v-space: $base-padding, max-width: true,  grid-collapse: true ),
+    print:  ( columns: 12,  grid-media: $media-print,   v-space: $base-padding, max-width: false,  grid-collapse: true ),
+);

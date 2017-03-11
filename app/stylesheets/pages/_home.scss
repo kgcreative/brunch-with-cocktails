@@ -1,3 +1,11 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
+
+#home {
+  main > article {
+    @if global-variable-exists(content-container) {
+      @include responsive-container($content-container);  
+    }
+  }
+}

@@ -1,0 +1,175 @@
+@charset "UTF-8";
+
+/// Root font size in pixels. Used for converting rem to pixels.
+///
+/// @type length
+///
+/// @group settings
+$root-font-size: 10px;
+
+
+/// Base font size in pixels. Used for converting between em and absolute lengths.
+/// @type length
+///
+/// @group settings
+$base-font-size: 18px;
+
+
+/// @name Bourbon Settings
+///
+/// @type map
+///
+/// @property {color} contrast-switch-dark-color [#000]
+///   Global dark color for the `contrast-switch` function.
+///
+/// @property {color} contrast-switch-light-color [#fff]
+///   Global light color for the `contrast-switch` function.
+///
+/// @property {list} global-font-file-formats [("ttf", "woff2", "woff")]
+///   Global font file formats for the `font-face` mixin.
+///
+/// @property {number (with unit)} modular-scale-base [1em]
+///   Global base value for the `modular-scale` function.
+///
+/// @property {number (unitless)} modular-scale-ratio [$major-third (1.25)]
+///   Global base ratio for the `modular-scale` function.
+///
+/// @property {boolean} rails-asset-pipeline [false]
+///   Set this to `true` when using the Rails Asset Pipeline and Bourbon will
+///   write asset paths using
+///   [sass-rails’ asset helpers](https://github.com/rails/sass-rails#asset-helpers).
+///
+/// @example scss
+///   $bourbon: (
+///     "contrast-switch-dark-color": #000,
+///     "contrast-switch-light-color": #fff,
+///     "global-font-file-formats": ("ttf", "woff2", "woff"),
+///     "modular-scale-base": 1em,
+///     "modular-scale-ratio": $major-third,
+///     "rails-asset-pipeline": false,
+///   );
+///
+/// @group settings
+$bourbon: (
+    "modular-scale-ratio": 1.25,
+);
+
+
+/// Max-container width. Edge-to-edge. Gutters are calculated inside the max-width.
+/// This is also used to generate our XL breakpoint.
+/// @type length (with unit)
+///
+/// @group settings
+$max-container-width: 1200px;
+
+
+/// Gutter
+///
+/// @type length (with unit)
+///
+/// The space on the left and right of grid elements
+///
+/// @group settings
+$gutter: 20px;
+
+
+/// Grid Columns
+///
+/// @type number (unitless)
+///
+/// How many columns in a grid
+///
+/// @group settings
+$grid-columns: 12;
+
+/// This variable is a sass map that overrides Neat's default grid settings.
+/// Use this to define your project's grid properties incluting gutters and
+/// total column count.
+///
+/// @type map
+///
+/// @name Neat grid
+///
+/// @property {number (unitless)} columns [12]
+///   Default number of the total grid columns.
+///
+/// @property {number (with unit)} gutter [20px]
+///   Default grid gutter width between columns.
+///
+/// @property {string | number (with unit)} media [null]
+///   Grid media query.
+///
+/// @property {color} color [rgba(#00d4ff, 0.25)]
+///   Default visual grid color.
+///
+/// @example scss
+///   $neat-grid: (
+///     columns: 12,
+///     gutter: 20px,
+///   );
+///
+/// @group settings
+$neat-grid: (
+    columns: $grid-columns,
+    gutter:  $gutter,
+    media: null,
+    color: rgba(#00d4ff, 0.25),
+    direction: ltr,
+);
+
+/// Screen XS Min
+$screen-xs-min:               0px !default;
+
+/// Screen SM Min
+$screen-sm-min:               576px !default;
+
+/// Screen MD Min
+$screen-md-min:               768px !default;
+
+/// Screen LG Min
+$screen-lg-min:               992px !default;
+
+/// Screen XL Min
+$screen-xl-min:               $max-container-width !default;
+
+
+
+// Upper boundaries
+// ----------------
+/// Screen LG Max
+$screen-lg-max:               $screen-xl-min - 1px !default;
+
+/// Media LG
+$media-lg: (
+    columns: 12,
+    gutter: 30px,
+    media: $screen-lg-min,
+) !default;
+
+/// Media LG only
+$media-lg-only: (
+    columns: 12,
+    gutter: 30px,
+    media: 'only screen and (min-width: #{$screen-lg-min}) and (max-width: #{$screen-lg-max})',
+) !default;
+
+/// Media LG max
+$media-lg-max: (
+    columns: 12,
+    gutter: 30px,
+    media: 'only screen and (max-width: #{$screen-lg-max})',
+) !default;
+
+/// Media XL
+$media-xl: (
+    columns: 12,
+    gutter: 30px,
+    media: $screen-xl-min,
+) !default;
+
+/// Media XL
+$media-xl: (
+    columns: 12,
+    gutter: 35px,
+    media: $screen-xl-min,
+) !default;

@@ -1,22 +1,26 @@
+@charset "UTF-8";
+
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
 
-#fat-footer {
-    // Generic settings. Configure these variables in _variables.scss
-  $footer__bg-color: color(generic, dark-grey) !default;
-  $footer__fg-color: color(generic , white) !default;
-
-  // Map local variables to global names (makes it easier to read)
-  $_bg-color: $footer__bg-color;
-  $_fg-color: $footer__fg-color;
-
-  //properties
-  background-color: $_bg-color;
-  color: $_fg-color;
+#footer {
+  @if mixin-exists(responsive-container) {
+    @if global-variable-exists(full-container) {  
+      @include responsive-container($full-container);
+    } @else {
+      @include responsive-container($default-container);
+    }
+  }
+  background-color: color(brand);
+  color: color(reverse-text);
   overflow: hidden;
 
   a {
     color: inherit;
+  }
+
+  :last-child {
+    margin-bottom: 0;
   }
 }
