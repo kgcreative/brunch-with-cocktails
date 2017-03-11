@@ -15,7 +15,6 @@
 ### Configure:
 * If you need to add plugins or modules to this instance of brunch, you can do so via `npm install --save module`
 * Plugin and module configurations are added to brunch-config.js
-* If you cloned or forked this repo instead of installing via the skeleton above, you can run `npm install` to install app dependencies and brunch plugins.
 
 ### Run:
 * `npm start` - Runs the `brunch watch --server --port 3333` command to watch the project with continuous rebuild. This will also launch HTTP server with [pushState](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history) at [localhost:3333](http://localhost:3333).
