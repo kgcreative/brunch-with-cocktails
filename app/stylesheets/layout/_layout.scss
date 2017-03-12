@@ -26,7 +26,7 @@ main {
   background-color: color(background);
   flex: 1;
 
-  article {
+  > article {
     @if mixin-exists(responsive-container) {
       @if global-variable-exists(content-container) {
         @include responsive-container($content-container);  

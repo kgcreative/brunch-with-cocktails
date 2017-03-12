@@ -42,7 +42,7 @@ exports.config =
         , 'node_modules/neat-omega/'
         ]
       # Set the precision for arithmetic operations.
-      precision: 8
+      precision: 10
       # To enable embedded source maps, pass the option `sourceMapEmbed`. This is only supported in _native_ mode; Ruby Sass isn't supported.
       sourceMapEmbed: true
 
