@@ -10,6 +10,7 @@
 // 1. Configuration and helpers
 @import
    'vendors/decanter-vendors'
+ , 'utilities/variables/_global-settings.scss' // global settings
  , 'utilities/decanter-utilities'
  , 'utilities/variables/variables' // Your project's variables and settings
 ;

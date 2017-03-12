@@ -184,6 +184,11 @@
     }
   }
 
+  .inception {
+    @include centered-container(12, $max-width: false, $grid-collapse: false);
+    background-color: rgba(color(blue), .3);
+  }
+
   #example-6 {
     $_vspace: 1em;
     $_container: (

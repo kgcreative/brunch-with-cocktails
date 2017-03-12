@@ -56,6 +56,25 @@ _options:
         <div class="column--half"><code>@include grid-column(1 of 2)</code></div><div class="column--half"><code>@include grid-column(1 of 2)</code></div>
       </div>
     </section>
+    <div class="inception">
+      <p>Inception! A centered container inside a centered container.</p>
+      <section id="example-4">
+        <div class="example-wrapper"> <!-- This is only used to give the background and boundaries. In a normal layout, this would not exist -->
+          <h4>Centered-container (with <code>$max-width: 800px</code>)</h4>
+          <p><code>@include centered-container(12, $max-width: 800px);</code></p>
+          <p>When passed a <code>$max-width: 800px</code> value, the centered container mixin stops growing at the specified width (minus the current <code>$grid-media</code>'s gutters</code>)</p>
+          <div class="column--half"><code>@include grid-column(1 of 2)</code></div><div class="column--half"><code>@include grid-column(1 of 2)</code></div>
+        </div>
+      </section>
+      <section id="example-5">
+        <div class="example-wrapper"> <!-- This is only used to give the background and boundaries. In a normal layout, this would not exist -->
+          <h4>Centered-container (with <code>max-width: 800px</code>, and <code>$grid-collapse: true</code>)</h4>
+          <p><code>@include centered-container(12, $max-width: 800px, $grid-collapse: true);</code></p>
+          <p>When passed a <code>$max-width: 800px</code> value, combined with <code>$grid-collapse: true</code>, the centered container mixin stops growing at the specified width (while consuming the current <code>$grid-media</code>'s gutters</code>)</p>
+          <div class="column--half"><code>@include grid-column(1 of 2)</code></div><div class="column--half"><code>@include grid-column(1 of 2)</code></div>
+        </div>
+      </section>
+    </div>
     <section class="grid-container grid-visual">
       <section id="example-6">
         <div class="grid-collapse grid-visual grid-container"> <!-- This is only used to give the background and boundaries. In a normal layout, this would not exist -->
