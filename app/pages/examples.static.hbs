@@ -9,10 +9,16 @@ _options:
 
   <header>
     <h1>Decanter Examples</h1>
+    <ul>
+      <li><a href="#centered-container">Centered Container</a></li>
+      <li><a href="#responsive-container">Responsive Container</a></li>
+      <li><a href="#grid-column">Neat: Grid Column</a></li>
+      <li><a href="#items-per-row">Items per row</a></li>
+    </ul>
   </header>
 
   <section>
-    <section class="centered-container-10">
+    <section id="centered-container">
       <h4>Centered-container</h4>
       <p>The centered container mixin has several purposes. At it's most basic, it's a way to create a wraper-less container that allows you to have constrained content while being able to set a background color that spans the entire width of the page.</p>
       <p>The content is constrained by padding, instead of margin, which allows us to do things like set a background color or image without an additional wrapper container.</p>
@@ -75,7 +81,7 @@ _options:
         </div>
       </section>
     </div>
-    <section class="grid-container grid-visual">
+    <section class="grid-container grid-visual" id="responsive-container">
       <section id="example-6">
         <div class="grid-collapse grid-visual grid-container"> <!-- This is only used to give the background and boundaries. In a normal layout, this would not exist -->
           <div class="column--full">
@@ -154,6 +160,7 @@ _options:
 
   <section id="items-per-row">
     <h3>Items per row</h3>
+    <p>The <code>items-per-row</code> mixin is simply a shortcut that outputs the correct neat and alpha classes in order to quickly bootstrap an item grid. Taking it a step further, the <code>flex-items-per-row</code> mixin also quickly instantiates an instance of a flexbox container for some more advanced layout examples.</p>
     <div class="example-wrapper"> <!-- This is only used to give the background and boundaries. In a normal layout, this would not exist -->
       <p><code>@include centered-container(10);</code></p>
       <h5>Items-per-row example</h5>
