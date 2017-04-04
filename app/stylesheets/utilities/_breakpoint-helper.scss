@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+$breakpoint-helper-map: (
+    (short-label: 'xs', full-label: '$media-xs', media: $media-xs-only, color: color(blue)),
+    (short-label: 'sm', full-label: '$media-sm', media: $media-sm-only, color: color(olive)),
+    (short-label: 'md', full-label: '$media-md', media: $media-md-only, color: color(orange)),
+    (short-label: 'lg', full-label: '$media-lg', media: $media-lg-only, color: color(red)),
+    (short-label: 'xl', full-label: '$media-xl', media: $media-xl, color: color(purple)),
+);
+
+
+
+@if $breakpoint-helper == true {
+  @include breakpoint-helper;
+}
