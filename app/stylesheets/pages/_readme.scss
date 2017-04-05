@@ -1,0 +1,12 @@
+#readme {
+  main > header {
+    @include responsive-container($content-container);
+    background-color: color(background-secondary);
+  }
+  main > section {
+   @include responsive-container($content-container);
+   &:nth-of-type(even) {
+     background-color: color(background-tertiary);
+   }
+  }
+}

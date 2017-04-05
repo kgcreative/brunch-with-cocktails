@@ -7,305 +7,251 @@ _options:
   layout: app/layouts/main.static.hbs
 ---
 
+<header>
+  <h1>Decanter Examples</h1>
+  <ul>
+    <li><a href="#centered-container">Centered Container</a></li>
+    <li><a href="#responsive-container">Responsive Container</a></li>
+    <li><a href="#grid-column">Neat: Grid Column</a></li>
+    <li><a href="#items-per-row">Items per row</a></li>
+  </ul>
+</header>
+
+<section>
+  <section id="centered-container">
+    <h4>Centered-container</h4>
+    <p>The centered container mixin has several purposes. At it's most basic, it's a way to create a wraper-less container that allows you to have constrained content while being able to set a background color that spans the entire width of the page.</p>
+    <p>The content is constrained by padding, instead of margin, which allows us to do things like set a background color or image without an additional wrapper container.</p>
+    <p>In the examples below, we've added an example wrapper to demonstrate the padding boundaries, which are denoted with a dashed border.</p>
+    <p>Generally, <code>$max-width</code> is used when we want fixed width containers at large breakpoints.</p>
+    <p>Finally, the <code>$columns</code> setting is calculated either from the full width of the container, or in the case of <code>$max-width</code>, it's computed from the container's max width. This allows for a great amount of flexibility.</p>
+  </section>
+  <section id="example-1">
+    <div class="example-wrapper"> <!-- This is only used to give the background and boundaries. In a normal layout, this would not exist -->
+      <h4>Centered-container (8 col)</h4>
+      <p class="center"><code>@include centered-container(8);</code></p>
+    </div>
+  </section>
+  <section id="example-2">
+    <div class="example-wrapper"> <!-- This is only used to give the background and boundaries. In a normal layout, this would not exist -->
+      <h4>$vspace: {length}</h4>
+      <p class="center"><code>@include centered-container(8, $vspace: 0);</code></p>
+      <p>In this example, we're passing an additional parameter of <code>$vspace: 0</code>, which removes the top and bottom padding from the container.</p>
+    </div>
+  </section>
+  <section id="example-3">
+    <div class="example-wrapper"> <!-- This is only used to give the background and boundaries. In a normal layout, this would not exist -->
+      <h4>$max-width: true</h4>
+      <code class="block" style="margin-left: 1em; margin-right: 1em;">@include centered-container(12, $max-width: false);
+
+@include grid-media($media-xl-min) {
+  @include centered-container(12, $max-width: true);
+}</code></p>
+      <p>When passed the <code>$max-width: true</code> setting, the centered container mixin stops growing at the projects <code>$max-container-width</code> size (minus the current <code>$grid-media</code>'s gutters)</code></p>
+    </div>
+  </section>
+  <section id="example-4">
+    <div class="example-wrapper"> <!-- This is only used to give the background and boundaries. In a normal layout, this would not exist -->
+      <h4>$max-width: {length}</h4>
+      <code class="block">@include centered-container(12, $max-width: false);
+
+$_gutter: _retrieve-neat-setting($neat-grid, gutter);
+
+@include grid-media($grid: (media: 'screen and (min-width: #{800px})')) {
+  @include centered-container(12, $max-width: 800px);
+};</code></p>
+      <p>When passed a <code>$max-width: 800px</code> value, the centered container mixin stops growing at the specified width (minus the current <code>$grid-media</code>'s gutters</code>)</p>
+    </div>
+  </section>
+  <section id="example-5">
+    <div class="example-wrapper"> <!-- This is only used to give the background and boundaries. In a normal layout, this would not exist -->
+      <h4>$max-width: {length}, $grid-collapse: {bool}</h4>
+      <p><code>@include centered-container(12, $max-width: 800px, $grid-collapse: true);</code></p>
+      <p>When passed a <code>$max-width: 800px</code> value, combined with <code>$grid-collapse: true</code>, the centered container mixin stops growing at the specified width (while consuming the current <code>$grid-media</code>'s gutters</code>)</p>
+    </div>
+  </section>
+  <section class="grid-container grid-visual" id="responsive-container">
+    <section id="example-6">
+      <div class="grid-collapse grid-visual grid-container"> <!-- This is only used to give the background and boundaries. In a normal layout, this would not exist -->
+        <div class="column--full">
+          <h4>$responsive-container();</h4>
+          <p>The <code>responsive-container();</code> mixin consumes a sass map of containers and breakpoints, which allows you to create a customized experience that varies by breakpoint.</p>
+          <code class="block">$_vspace: 1em;
+$_container: (
+<span class="xs">xs: ( columns: 8, grid-media: $media-xs-only, v-space: $_vspace, max-width: false, grid-collapse: false ),</span>
+<span class="sm">sm: ( columns: 8,  grid-media: $media-sm-only, v-space: $_vspace, max-width: false, grid-collapse: false ),</span>
+<span class="md">md: ( columns: 6, grid-media: $media-md-only, v-space: $_vspace, max-width: false, grid-collapse: false ),</span>
+<span class="lg">lg: ( columns: 12, grid-media: $media-lg-only, v-space: $_vspace, max-width: false, grid-collapse: false ),</span>
+<span class="xl">xl: ( columns: 12, grid-media: $media-xl,      v-space: $_vspace, max-width: true,  grid-collapse: false ),</span>
+<span class="print">print:  ( columns: 8, grid-media: $media-print, v-space: $_vspace, max-width: true, grid-collapse: false ),</span>
+);
+@include responsive-container($_container);</code>
+        </div>
+      </div>
+    </section>
+
+  </section>
+  <aside id="breakpoint-helper"></aside>
+</section>
+<section id="grid-column">
   <header>
-    <h1>Decanter Examples</h1>
-    <ul>
-      <li><a href="#centered-container">Centered Container</a></li>
-      <li><a href="#responsive-container">Responsive Container</a></li>
-      <li><a href="#grid-column">Neat: Grid Column</a></li>
-      <li><a href="#items-per-row">Items per row</a></li>
-    </ul>
+    <h3>grid-column</h3>
   </header>
 
-  <section>
-    <section id="centered-container">
-      <h4>Centered-container</h4>
-      <p>The centered container mixin has several purposes. At it's most basic, it's a way to create a wraper-less container that allows you to have constrained content while being able to set a background color that spans the entire width of the page.</p>
-      <p>The content is constrained by padding, instead of margin, which allows us to do things like set a background color or image without an additional wrapper container.</p>
-      <p>In the examples below, we've added an example wrapper to demonstrate the padding boundaries, which are denoted with a dashed border.</p>
-      <p>Generally, <code>$max-width</code> is used when we want fixed width containers at large breakpoints.</p>
-      <p>Finally, the <code>$columns</code> setting is calculated either from the full width of the container, or in the case of <code>$max-width</code>, it's computed from the container's max width. This allows for a great amount of flexibility.</p>
-    </section>
-    <section id="example-1">
-      <div class="example-wrapper"> <!-- This is only used to give the background and boundaries. In a normal layout, this would not exist -->
-        <h4>Centered-container (10 col)</h4>
-        <p><code>@include centered-container(8);</code></p>
-      </div>
-    </section>
-    <section id="example-2">
-      <div class="example-wrapper"> <!-- This is only used to give the background and boundaries. In a normal layout, this would not exist -->
-        <h4>Centered-container (12 col)</h4>
-        <p><code>@include centered-container(12, 0);</code></p>
-        <p>In the above example, we're passing an additional parameter for <code>$vspace: 0</code>, which removes the default top and bottom spacing from the container.</p>
-      </div>
-    </section>
-    <section id="example-3">
-      <div class="example-wrapper"> <!-- This is only used to give the background and boundaries. In a normal layout, this would not exist -->
-        <h4>Centered-container (with <code>$max-width: true</code>)</h4>
-        <p><code>@include centered-container(12, $max-width: true);</code></p>
-        <p>When passed the <code>$max-width: true</code> setting, the centered container mixin stops growing at the projects <code>$max-container-width</code> size (minus the current <code>$grid-media</code>'s gutters)</code></p>
-      </div>
-    </section>
-    <section id="example-4">
-      <div class="example-wrapper"> <!-- This is only used to give the background and boundaries. In a normal layout, this would not exist -->
-        <h4>Centered-container (with <code>$max-width: 800px</code>)</h4>
-        <p><code>@include centered-container(12, $max-width: 800px);</code></p>
-        <p>When passed a <code>$max-width: 800px</code> value, the centered container mixin stops growing at the specified width (minus the current <code>$grid-media</code>'s gutters</code>)</p>
-        <div class="column--half"><code>@include grid-column(1 of 2)</code></div><div class="column--half"><code>@include grid-column(1 of 2)</code></div>
-      </div>
-    </section>
-    <section id="example-5">
-      <div class="example-wrapper"> <!-- This is only used to give the background and boundaries. In a normal layout, this would not exist -->
-        <h4>Centered-container (with <code>max-width: 800px</code>, and <code>$grid-collapse: true</code>)</h4>
-        <p><code>@include centered-container(12, $max-width: 800px, $grid-collapse: true);</code></p>
-        <p>When passed a <code>$max-width: 800px</code> value, combined with <code>$grid-collapse: true</code>, the centered container mixin stops growing at the specified width (while consuming the current <code>$grid-media</code>'s gutters</code>)</p>
-        <div class="column--half"><code>@include grid-column(1 of 2)</code></div><div class="column--half"><code>@include grid-column(1 of 2)</code></div>
-      </div>
-    </section>
-    <div class="inception">
-      <p>Inception! A centered container inside a centered container.</p>
-      <section id="example-4">
-        <div class="example-wrapper"> <!-- This is only used to give the background and boundaries. In a normal layout, this would not exist -->
-          <h4>Centered-container (with <code>$max-width: 800px</code>)</h4>
-          <p><code>@include centered-container(12, $max-width: 800px);</code></p>
-          <p>When passed a <code>$max-width: 800px</code> value, the centered container mixin stops growing at the specified width (minus the current <code>$grid-media</code>'s gutters</code>)</p>
-          <div class="column--half"><code>@include grid-column(1 of 2)</code></div><div class="column--half"><code>@include grid-column(1 of 2)</code></div>
-        </div>
-      </section>
-      <section id="example-5">
-        <div class="example-wrapper"> <!-- This is only used to give the background and boundaries. In a normal layout, this would not exist -->
-          <h4>Centered-container (with <code>max-width: 800px</code>, and <code>$grid-collapse: true</code>)</h4>
-          <p><code>@include centered-container(12, $max-width: 800px, $grid-collapse: true);</code></p>
-          <p>When passed a <code>$max-width: 800px</code> value, combined with <code>$grid-collapse: true</code>, the centered container mixin stops growing at the specified width (while consuming the current <code>$grid-media</code>'s gutters</code>)</p>
-          <div class="column--half"><code>@include grid-column(1 of 2)</code></div><div class="column--half"><code>@include grid-column(1 of 2)</code></div>
-        </div>
-      </section>
-    </div>
-    <section class="grid-container grid-visual" id="responsive-container">
-      <section id="example-6">
-        <div class="grid-collapse grid-visual grid-container"> <!-- This is only used to give the background and boundaries. In a normal layout, this would not exist -->
-          <div class="column--full">
-            <h4>Putting it all together: <code>$responsive-container();</code></h4>
-            <p>The <code>responsive-container();</code> mixin consumes a sass map of containers and breakpoints, which allows you to create a customized experience that varies by breakpoint.</p>
-            <p><code style="display: block; white-space: pre-wrap;">
-              $_vspace: 1em;
-              $_container: (
-              <span class="xs">xs: ( columns: 8, grid-media: $media-xs-only, v-space: $_vspace, max-width: false, grid-collapse: false ),</span>
-              <span class="sm">sm: ( columns: 8,  grid-media: $media-sm-only, v-space: $_vspace, max-width: false, grid-collapse: false ),</span>
-              <span class="md">md: ( columns: 6, grid-media: $media-md-only, v-space: $_vspace, max-width: false, grid-collapse: false ),</span>
-              <span class="lg">lg: ( columns: 12, grid-media: $media-lg-only, v-space: $_vspace, max-width: false, grid-collapse: false ),</span>
-              <span class="xl">xl: ( columns: 12, grid-media: $media-xl,      v-space: $_vspace, max-width: true,  grid-collapse: false ),</span>
-              <span class="print">print:  ( columns: 8, grid-media: $media-print, v-space: $_vspace, max-width: true, grid-collapse: false ),</span>
-              );
-              @include responsive-container($_container);
-            </code></p>
-          </div>
-        </div>
-      </section>
+  <p>For reference on the <a href="http://neat.bourbon.io/">Neat Grid</a>, check out the project's <a href="http://neat.bourbon.io/examples/">Examples page</a></p>
+</section>
 
-    </section>
-      <aside id="breakpoint-helper"></aside>
-    </section>
-  <section id="grid-column">
-    <header>
-      <h3>grid-column</h3>
-    </header>
-
-    <p>I'm not going to spend much time on the <a href="http://neat.bourbon.io/">Neat Grid</a>. For that, refer to the neat project.
-    Suffice it to say, the neat grid is extremely powerful and adjustable, and you can make pretty awesome layouts with
-    it out of the box.</p>
-    <div class="stories">
-      <div class="story col-1of3">
-        <code>@include grid-column(1 of 3);</code>
-      </div>
-      <div class="story col-2of3">
-        <code>@include grid-column(2 of 3);</code>
-      </div>
-      <div class="story col-3of3">
-        <code>@include grid-column(3 of 3);</code>
-      </div>
-      <div class="story col-2of3">
-        <code>@include grid-column(2 of 3);</code>
-      </div>
-      <div class="story col-1of3">
-        <code>@include grid-column(1 of 3);</code>
-      </div>
-      <div class="story col-1of3">
-        <code>@include grid-column(1 of 3);</code>
-        <div class="collapsed-grid">
-          <div class="col-1of1">
-            <p>This is a collapsed grid</p>
-          </div>
-          <div class="col-1of2">
-            Which contains two nested grid columns
-          </div>
-          <div class="col-1of2">
-            With this and neat's <code>grid-media</code> mixin, you can
-            reflow complex layouts in any way you want.
-          </div>
-        </div>
-
-      </div>
-      <div class="story col-1of3">
-        <code>@include grid-column(1 of 3);</code>
-      </div>
-      <div class="story col-1of3">
-        <code>@include grid-column(1 of 3);</code>
-      </div>
-      <div class="story col-1of3 clear">
-        <code>@include grid-column(1 of 3);</code>
-      </div>
-    </div>
-  </section>
-
-  <section id="items-per-row">
+<section id="items-per-row">
+  <header>
     <h3>Items per row</h3>
     <p>The <code>items-per-row</code> mixin is simply a shortcut that outputs the correct neat and alpha classes in order to quickly bootstrap an item grid. Taking it a step further, the <code>flex-items-per-row</code> mixin also quickly instantiates an instance of a flexbox container for some more advanced layout examples.</p>
-    <div class="example-wrapper"> <!-- This is only used to give the background and boundaries. In a normal layout, this would not exist -->
-      <p><code>@include centered-container(10);</code></p>
-      <h5>Items-per-row example</h5>
-      <p><code>@include grid-container;</code><br />
-        <code>@include grid-collapse;</code><br />
-        <code>@include items-per-row(4, '.item');</code></p>
-      <div class="item-grid--4">
-        <div class="item">
-          <p><code>.item</code></p>
-        </div>
-        <div class="item">
-          <p><code>.item</code></p>
-          <p>Some items have two lines</p>
-        </div>
-        <div class="item">
-          <p><code>.item</code></p>
-        </div>
-        <div class="item">
-          <p><code>.item</code></p>
-        </div>
-        <div class="item">
-          <p><code>.item</code></p>
-        </div>
-        <div class="item">
-          <p><code>.item</code></p>
-        </div>
-        <div class="item">
-          <p><code>.item</code></p>
-        </div>
+  </header>
+  <div class="example-wrapper"> <!-- This is only used to give the background and boundaries. In a normal layout, this would not exist -->
+    <h5>Items-per-row example</h5>
+    <p><code>@include centered-container(10);</code></p>
+
+    <div class="item-grid--4">
+      <code class="block">@include grid-container;
+        @include grid-collapse;
+        @include items-per-row(4, '.item');</code>
+      <div class="item">
+        <p><code>.item</code></p>
       </div>
-      <br />
-      <h5>Items-per-row, custom selector</h5>
-      <p><code>@include grid-container;</code><br />
-        <code>@include grid-collapse;</code><br />
-        <code>@include items-per-row(5, 'article');</code></p>
-      <section class="item-grid--5">
-        <article>
-          <p><code>article</code></p>
-        </article>
-        <article>
-          <p><code>article</code></p>
-          <p>Some items have two lines</p>
-        </article>
-        <article>
-          <p><code>article</code></p>
-        </article>
-        <article>
-          <p><code>article</code></p>
-        </article>
-        <article>
-          <p><code>article</code></p>
-        </article>
-        <article>
-          <p><code>article</code></p>
-        </article>
-        <article>
-          <p><code>article</code></p>
-        </article>
-      </section>
-      <br />
-      <h5>Flex-Items-per-row, centered with equal heights</h5>
-      <p><code>@include grid-container;</code><br />
-        <code>@include grid-collapse;</code><br />
-        <code>@include flex-items-per-row(4, '.item', $center-grid: true, $equal-heights: true);</code></p>
-      <div class="flex-item-grid--4">
-        <div class="item">
-          <p><code>.item</code></p>
-        </div>
-        <div class="item">
-          <p><code>.item</code></p>
-          <p>Some items have two lines</p>
-        </div>
-        <div class="item">
-          <p><code>.item</code></p>
-        </div>
-        <div class="item">
-          <p><code>.item</code></p>
-        </div>
-        <div class="item">
-          <p><code>.item</code></p>
-        </div>
-        <div class="item">
-          <p><code>.item</code></p>
-        </div>
-        <div class="item">
-          <p><code>.item</code></p>
-        </div>
+      <div class="item">
+        <p><code>.item</code></p>
+        <p>Some items have two lines</p>
       </div>
-      <br />
-      <h5>Flex items per row, centered without equal heights</h5>
-      <p><code>@include grid-container;</code><br />
-        <code>@include grid-collapse;</code><br />
-        <code>@include items-per-row(5, 'article', $center-grid: true, $equal-heights: false);</code></p>
-      <section class="flex-item-grid--5-centered">
-        <article>
-          <p><code>article</code></p>
-        </article>
-        <article>
-          <p><code>article</code></p>
-        </article>
-        <article>
-          <p><code>article</code></p>
-        </article>
-        <article>
-          <p><code>article</code></p>
-          <p>Some items have two lines</p>
-        </article>
-        <article>
-          <p><code>article</code></p>
-        </article>
-        <article>
-          <p><code>article</code></p>
-        </article>
-        <article>
-          <p><code>article</code></p>
-        </article>
-      </section>
-      <br />
-      <h5>Flex items per row, not centered with equal heights</h5>
-      <p><code>@include grid-container;</code><br />
-        <code>@include grid-collapse;</code><br />
-        <code>@include items-per-row(5, 'article', $center-grid: false, $equal-heights: true);</code></p>
-      <section class="flex-item-grid--5">
-        <article>
-          <p><code>article</code></p>
-        </article>
-        <article>
-          <p><code>article</code></p>
-        </article>
-        <article>
-          <p><code>article</code></p>
-        </article>
-        <article>
-          <p><code>article</code></p>
-          <p>Some items have two lines</p>
-        </article>
-        <article>
-          <p><code>article</code></p>
-        </article>
-        <article>
-          <p><code>article</code></p>
-        </article>
-        <article>
-          <p><code>article</code></p>
-        </article>
-      </section>
-  </section>
+      <div class="item">
+        <p><code>.item</code></p>
+      </div>
+      <div class="item">
+        <p><code>.item</code></p>
+      </div>
+      <div class="item">
+        <p><code>.item</code></p>
+      </div>
+      <div class="item">
+        <p><code>.item</code></p>
+      </div>
+      <div class="item">
+        <p><code>.item</code></p>
+      </div>
+    </div>
+    <br />
+    <h5>Items-per-row, custom selector</h5>
+    <p><code>@include grid-container;</code><br />
+      <code>@include grid-collapse;</code><br />
+      <code>@include items-per-row(5, 'article');</code></p>
+    <section class="item-grid--5">
+      <article>
+        <p><code>article</code></p>
+      </article>
+      <article>
+        <p><code>article</code></p>
+        <p>Some items have two lines</p>
+      </article>
+      <article>
+        <p><code>article</code></p>
+      </article>
+      <article>
+        <p><code>article</code></p>
+      </article>
+      <article>
+        <p><code>article</code></p>
+      </article>
+      <article>
+        <p><code>article</code></p>
+      </article>
+      <article>
+        <p><code>article</code></p>
+      </article>
+    </section>
+    <br />
+    <h5>Flex-Items-per-row, centered with equal heights</h5>
+    <p><code>@include grid-container;</code><br />
+      <code>@include grid-collapse;</code><br />
+      <code>@include flex-items-per-row(4, '.item', $center-grid: true, $equal-heights: true);</code></p>
+    <div class="flex-item-grid--4">
+      <div class="item">
+        <p><code>.item</code></p>
+      </div>
+      <div class="item">
+        <p><code>.item</code></p>
+        <p>Some items have two lines</p>
+      </div>
+      <div class="item">
+        <p><code>.item</code></p>
+      </div>
+      <div class="item">
+        <p><code>.item</code></p>
+      </div>
+      <div class="item">
+        <p><code>.item</code></p>
+      </div>
+      <div class="item">
+        <p><code>.item</code></p>
+      </div>
+      <div class="item">
+        <p><code>.item</code></p>
+      </div>
+    </div>
+    <br />
+    <h5>Flex items per row, centered without equal heights</h5>
+    <p><code>@include grid-container;</code><br />
+      <code>@include grid-collapse;</code><br />
+      <code>@include items-per-row(5, 'article', $center-grid: true, $equal-heights: false);</code></p>
+    <section class="flex-item-grid--5-centered">
+      <article>
+        <p><code>article</code></p>
+      </article>
+      <article>
+        <p><code>article</code></p>
+      </article>
+      <article>
+        <p><code>article</code></p>
+      </article>
+      <article>
+        <p><code>article</code></p>
+        <p>Some items have two lines</p>
+      </article>
+      <article>
+        <p><code>article</code></p>
+      </article>
+      <article>
+        <p><code>article</code></p>
+      </article>
+      <article>
+        <p><code>article</code></p>
+      </article>
+    </section>
+    <br />
+    <h5>Flex items per row, not centered with equal heights</h5>
+    <p><code>@include grid-container;</code><br />
+      <code>@include grid-collapse;</code><br />
+      <code>@include items-per-row(5, 'article', $center-grid: false, $equal-heights: true);</code></p>
+    <section class="flex-item-grid--5">
+      <article>
+        <p><code>article</code></p>
+      </article>
+      <article>
+        <p><code>article</code></p>
+      </article>
+      <article>
+        <p><code>article</code></p>
+      </article>
+      <article>
+        <p><code>article</code></p>
+        <p>Some items have two lines</p>
+      </article>
+      <article>
+        <p><code>article</code></p>
+      </article>
+      <article>
+        <p><code>article</code></p>
+      </article>
+      <article>
+        <p><code>article</code></p>
+      </article>
+    </section>
+</section>
 </article>

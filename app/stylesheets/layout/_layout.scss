@@ -25,16 +25,6 @@ main {
   overflow: hidden;
   background-color: color(background);
   flex: 1;
-
-  > article {
-    @if mixin-exists(responsive-container) {
-      @if global-variable-exists(content-container) {
-        @include responsive-container($content-container);  
-      } @else {
-        @include responsive-container($default-container);
-      } 
-    }
-  }
 }
 
 [tabindex="-1"]:focus {

@@ -19,38 +19,15 @@
 ///     red: #ff4136,
 ///   );
 $colors: (
-    brand:                        #2c853c,
-    action:                       #00992b,
-    action-active:                #007b38,
+    brand:                        #004E75,
+    action:                       #005675,
+    action-active:                #003963,
     background:                   #fff,
-    background-secondary:         #f4f4f4,
+    background-secondary:         #f0f0f0,
+    background-tertiary:          #e8f7fc,
     border:                       #ccc,
     text:                         #121111,
-    text-active:                  #00992b,
+    text-active:                  #005675,
     reverse-text:                 #fff,
     reverse-text-active:          #fff,
-  //
-  // ------------------------------------
-  // Named Colors
-  // ------------------------------------
-  //
-  // Reds
-    bright-red:                   #B1040E,
-    dark-red:                     #820000,
-    black:                        #000,
-    charcoal:                     #2F2424,
-    stone:                        #808080,
-    ash:                          #ccc,
-    smoke:                        #f4f4f4,
-    white:                        #fff,
-);
-
-$buttons: (
-
-);
-
-$social: (
-    facebook:                     #4767b1,
-    twitter:                      #55acee,
-    instagram:                    #125688,
 );

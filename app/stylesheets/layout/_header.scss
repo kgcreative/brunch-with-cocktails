@@ -42,35 +42,16 @@
 }
 
 
-#header__content {
-  //properties
-  @if mixin-exists(responsive-container) {
-    @if global-variable-exists(full-container) {
-      @include responsive-container($full-container);
-    } @else {
-      @include responsive-container($default-container);
-    } 
-  }
-  background-color: color(brand);
-  color: color(reverse-text);
+body > header {
+  background-color: color(background);
+  color: color(text);
   padding: .25em 0.5em;
   font-size: modular-scale(1);
   font-family: $heading-font-family;
   font-weight: 900;
   text-align: center;
-
+  padding-top: modular-scale(2);
   a {
     color: inherit;
   }
-
-  #header__logo {
-    display: inline-block;
-    margin-right: 0.5em;
-  }
-
-  #header__name {
-    display: inline-block;
-  }
-
-
 }

@@ -19,7 +19,8 @@
 @import
     'base/decanter-base'
   , 'base/typography' // Local override
-  , 'base/placeholders'
+  , 'utilities/placeholders'
+  , 'utilities/helpers'
 ;
 
 // 4. Components
@@ -39,6 +40,7 @@
 @import
     'pages/home'
   , 'pages/examples'
+  , 'pages/readme'
 ;
 
 // 7. Themes
