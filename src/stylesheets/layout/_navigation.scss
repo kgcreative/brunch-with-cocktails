@@ -14,18 +14,18 @@ $site-nav__height: 4rem !default;
       @include responsive-container($chrome-container);
     } @else {
       @include responsive-container($default-container);
-    } 
+    }
   }
   height: $_height;
   line-height: 1.8;
   width: 100%;
   @include font-size(modular-scale(1));
   font-weight: 400;
-  
+
   text-align: center;
 
   ul {
-    @extend ul.plain;
+    @extend %plain;
   }
 
   li {
@@ -96,4 +96,3 @@ $site-nav__height: 4rem !default;
     }
   }
 }
-

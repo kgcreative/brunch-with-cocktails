@@ -9,14 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('hello skiplinks');
   });
 
-  // Load fastclick.js for better mobile performance. See https://github.com/ftlabs/attachFastClick
-  var attachFastClick = require('fastclick');
-  attachFastClick(document.body);
-  console.log('hello fastclick');
-
   // initialize the megamenu
   // $('nav#primary-nav').accessibleMegaMenu();
-  
+
   // hack so that the megamenu doesn't show flash of css animation after the page loads.
   setTimeout(function () {
       $('body').removeClass('init');
