@@ -9,7 +9,7 @@
 
 ### Initialize
 * Once Node.js and Brunch are installed,
-* Clone this git repo `https://github.com/kgcreative/brunch-with-cocktails.git#decanter`
+* Clone this git repo `https://github.com/kgcreative/brunch-with-cocktails.git`
 * Run `npm install` to install app dependencies and brunch plugins
 
 ### Configure:
@@ -21,8 +21,8 @@
 * `brunch build --production` builds the minified project for production
 
 ### Learn:
-* `public/` dir is fully auto-generated and served by HTTP server.  Write your code in `app/` dir.
-* Place static files you want to be copied from `app/assets/` to `public/`.
+* `public/` dir is fully auto-generated and served by HTTP server.  Write your code in `src/` dir.
+* Place static files you want to be copied from `src/assets/` to `public/`.
 * [Handlebars](http://handlebarsjs.com) Static site templating structure is written in `layouts`, `partials`, and `pages`.
 * [Brunch](http://brunch.io), [Getting started guide](https://github.com/brunch/brunch-guide#readme)
 * [SASS](http://sass-lang.com/), using the scss syntax and the [7-1 architecture pattern](http://sass-guidelin.es/#architecture) and sticking to [Sass Guidelines](http://sass-guidelin.es) writing conventions.
