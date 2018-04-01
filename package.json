@@ -1,8 +1,8 @@
 {
   "name": "brunch-with-cocktails",
-  "description": "Brunch with Cocktails. Brunch, bourbon, neat, handlebars, html-brunch-static, postcss, autoprefixer",
+  "description": "Brunch with Cocktails. Brunch, bourbon, neat, bitters, handlebars, html-brunch-static, postcss, autoprefixer",
   "author": "Kevin Garcia",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "contributors": [
     {
       "name": "Kevin Garcia",
@@ -14,7 +14,7 @@
     "url": "https://github.com/kgcreative/brunch-with-cocktails.git"
   },
   "scripts": {
-    "start": "brunch watch --server --port 3334",
+    "start": "brunch watch --server --port 3333",
     "build": "brunch build --production"
   },
   "dependencies": {
