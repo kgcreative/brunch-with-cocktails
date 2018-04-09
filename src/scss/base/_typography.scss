@@ -1,0 +1,282 @@
+@charset "UTF-8";
+
+// -----------------------------------------------------------------------------
+// This file contains site-wide typography overrides. To modify Decanter's base
+// typography, you can do so via utilities/variables/base/_typography.scss
+// -----------------------------------------------------------------------------
+
+// Responsive Typography
+body {
+  $_root-font-size: _retrieve-decanter-setting(root-font-size);
+  @include grid-media($media-sm-max) {
+    font-size: em(16px, $_root-font-size);
+  }
+
+  @include grid-media($media-xl) {
+    font-size: em(19px, $_root-font-size);
+  }
+
+  @include grid-media($media-print) {
+    font-size: em(10px, $_root-font-size);
+  }
+}
+
+h1 {
+  @include grid-media($media-md-max) {
+    font-size: modular-scale(4);
+    letter-spacing: -1px;
+  }
+  @include grid-media($media-xs-only) {
+    letter-spacing: -.5px;
+  }
+  @include grid-media($media-lg) {
+    letter-spacing: -1.5px;
+  }
+}
+
+h2 {
+  @include grid-media($media-xs-only) {
+    font-size: modular-scale(3);
+  }
+  @include grid-media($media-md-max) {
+    letter-spacing: -1px;
+  }
+  @include grid-media($media-xs-only) {
+    letter-spacing: -.5px;
+  }
+  @include grid-media($media-lg) {
+    letter-spacing: -1px;
+  }
+}
+
+h3 {
+  @include grid-media($media-xs-only) {
+    font-size: modular-scale(2);
+  }
+}
+
+h4 {
+  @include grid-media($media-xs-only) {
+    font-size: modular-scale(1);
+  }
+}
+
+h5 {
+  @include grid-media($media-xs-only) {
+    font-size: modular-scale(0);
+  }
+}
+
+.lead{
+  @include font-size(modular-scale(1));
+  font-weight: 300;
+}
+
+.media-credit {
+  font-style: italic;
+  @extend small;
+}
+
+a {
+  &.jump-link {
+    text-decoration: none;
+
+    span.fa {
+      margin-left: .25em;
+      margin-right: .15em;
+      transition: margin .25s ease;
+    }
+
+    #{$hocus} {
+      text-decoration: underline;
+      color: color(link--active);
+
+      span.fa {
+        margin-left: .4em;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &.anchor-link {
+    text-decoration: none;
+    backface-visibility: hidden;
+    span.fa {
+      position: relative;
+      margin-left: .25em;
+      transition: all .25s ease;
+      top: 0;
+    }
+
+    #{$hocus} {
+      text-decoration: underline;
+      color: color(link--active);
+
+      span.fa {
+        top: .25em;
+      }
+    }
+  }
+
+  &.anchor-link--reverse {
+    text-decoration: none;
+    backface-visibility: hidden;
+    span.fa {
+      position: relative;
+      margin-left: .25em;
+      transition: all .25s ease;
+      top: 0;
+    }
+
+    #{$hocus} {
+      text-decoration: underline;
+      color: color(link--active);
+
+      span.fa {
+        top: -.125em;
+      }
+    }
+  }
+}
+
+br.print {
+  display: none;
+  @media print {
+    display: initial;
+  }
+}
+
+main a {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  &::after {
+    content: '';
+    position: absolute;
+    left: em(-5px);
+    width: calc(100% + #{em(10px)});
+    height: em(3px);
+    bottom: em(-3px);
+    background-color: tint(color(blue), 70%);
+    z-index: -1;
+    transition: all .15s ease-in;
+
+    @media print {
+      display: none;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    text-decoration: none;
+  }
+
+  #{$hocus} {
+    text-decoration: none;
+    &::after {
+      height: em(33px);
+      background-color: tint(color(blue), 80%);
+      transition: all .15s ease-out;
+    }
+  }
+  &:active {
+    text-decoration: none;
+    &::after {
+      background-color: tint(color(blue), 40%);
+      height: em(3px);
+      transition-duration: .05s;
+    }
+  }
+}
+
+body > header {
+  a {
+    position: relative;
+
+    &:focus {
+      outline: tint(color(blue), 80%);
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      left: em(-5px);
+      width: calc(100% + #{em(10px)});
+      height: em(3px);
+      top: em(-30px);
+      background-color: tint(color(blue), 70%);
+      z-index: -1;
+      transition: all .2s ease-in;
+
+      @media print {
+        display: none;
+      }
+    }
+    #{$hocus} {
+      &::before {
+        height: em(24px);
+        transition: all .2s ease-out;
+      }
+    }
+    &:active {
+      &::before {
+        height: em(56px);
+        transition-duration: .05s;
+        background-color: tint(color(blue), 80%);
+      }
+    }
+  }
+
+  #site-name {
+    &::before {
+      top:em(-12px);
+    }
+
+    #{$hocus} {
+      &::before {
+        height: em(18px, modular-scale(2));
+      }
+    }
+
+    &:active {
+      &::before {
+        height: em(58px, modular-scale(2));
+      }
+    }
+  }
+}
+
+hr {
+  border-top: 0;
+  border-right: 0;
+  border-bottom: $base-border;
+  border-left: 0;
+  margin: modular-scale(1) 0;
+}
+
+%fancyhover {
+  text-decoration: none;
+  color: color(link);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -8px;
+    left: 0;
+    background-color: color(link--active);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+    z-index: 1;
+  }
+
+  #{$hocus} {
+    text-decoration: none;
+    &::before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+$decanter-settings: (
+  // Configure global units
+  root-font-size: 10px,
+  base-font-size: 18px,
+  // Configure Bourbon Modular Scale
+  modular-scale-ratio: 1.25,
+  // Configure Default Neat Grid
+  grid-columns: 12,
+  gutter: 20px,
+  // Configure Decanter Functions and settings
+  max-container-width: 1500px,
+  breakpoint-helper: true,
+  breakpoint-helper-selector: '.bp-helper #breakpoint-helper',
+);

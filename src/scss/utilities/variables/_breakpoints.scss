@@ -1,0 +1,157 @@
+@charset 'UTF-8';
+
+////
+/// Breakpoints
+////
+
+// Breakpoint Boundaries
+// @type length
+// These correspond to the Bootstrap 4 Responsive Breakpoints
+
+// Lower boundaries
+// ----------------
+
+/// Screen XS Min
+$screen-xs-min:               0px;
+
+/// Screen SM Min
+$screen-sm-min:               576px;
+
+/// Screen MD Min
+$screen-md-min:               768px;
+
+/// Screen LG Min
+$screen-lg-min:               1024px;
+
+/// Screen XL Min
+$screen-xl-min:               _retrieve-decanter-setting(max-container-width);
+
+// Upper boundaries
+// ----------------
+
+/// Screen XS Max
+$screen-xs-max:               $screen-sm-min - 1px;
+
+/// Screen SM Max
+$screen-sm-max:               $screen-md-min - 1px;
+
+/// Screen MD Max
+$screen-md-max:               $screen-lg-min - 1px;
+
+/// Screen LG Max
+$screen-lg-max:               $screen-xl-min - 1px;
+
+/// Custom neat grids:
+
+/// Media XS only
+$media-xs: (
+  media: $screen-xs-min,
+);
+
+$media-xs-only: (
+  media: 'only screen and (max-width: #{$screen-xs-max})',
+);
+
+$media-xs-max: (
+  media: 'only screen and (max-width: #{$screen-xs-max})',
+);
+
+/// Media SM
+$media-sm: (
+  media: $screen-sm-min,
+);
+
+/// Media SM only
+$media-sm-only: (
+  media: 'only screen and (min-width: #{$screen-sm-min}) and (max-width: #{$screen-sm-max})',
+);
+
+/// Media SM max
+$media-sm-max: (
+  media: 'only screen and (max-width: #{$screen-sm-max})',
+);
+
+/// Media MD
+$media-md: (
+  media: $screen-md-min,
+);
+
+/// Media MD only
+$media-md-only: (
+  media: 'only screen and (min-width: #{$screen-md-min}) and (max-width: #{$screen-md-max})',
+);
+
+/// Media MD max
+$media-md-max: (
+  media: 'only screen and (max-width: #{$screen-md-max})',
+);
+
+/// Media LG
+$media-lg: (
+  gutter: 30px,
+  media: $screen-lg-min,
+);
+
+/// Media LG only
+$media-lg-only: (
+  gutter: 30px,
+  media: 'only screen and (min-width: #{$screen-lg-min}) and (max-width: #{$screen-lg-max})',
+);
+
+/// Media LG max
+$media-lg-max: (
+  gutter: 30px,
+  media: 'only screen and (max-width: #{$screen-lg-max})',
+);
+
+/// Media XL
+$media-xl: (
+  gutter: 35px,
+  media: $screen-xl-min,
+);
+
+/// Custom mobile nav grids
+$media-mobile-nav: (
+  gutter: 0px,
+  media: 'only screen and (max-width: #{$screen-md-max})',
+);
+/// Custom mobile nav grids
+$media-xs-mobile-nav: (
+  gutter: 0px,
+  media: 'only screen and (max-width: #{$screen-xs-max}) and (orientation: portrait)'
+);
+
+/// Media print
+$media-print: (
+  gutter: .25in,
+  media: 'only print',
+);
+
+body::before {
+  display: none;
+  content: "unknown";
+
+  @media screen {
+    content: "screen";
+  }
+
+  @media print {
+    content: "print";
+  }
+
+  @include grid-media($media-xs-only) {
+    content: "xs";
+  }
+  @include grid-media($media-sm-only) {
+    content: "sm";
+  }
+  @include grid-media($media-md-only) {
+    content: "md";
+  }
+  @include grid-media($media-lg-only) {
+    content: "lg";
+  }
+  @include grid-media($media-xl) {
+    content: "xl";
+  }
+}

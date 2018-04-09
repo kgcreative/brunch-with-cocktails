@@ -30,3 +30,10 @@ main {
 [tabindex="-1"]:focus {
   outline: 0;
 }
+
+#breakpoint-helper {
+  @include breakpoint-helper;
+  @media print {
+    display: none!important;
+  }
+}
