@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "auto-reload-brunch": "^2.7.1",
-    "autoprefixer": "^8",
+    "autoprefixer": "^8.4.1",
     "babel-brunch": "^6.1.1",
     "babel-preset-latest": "^6",
     "bourbon": "^5.0.0",
@@ -36,7 +36,7 @@
     "html-brunch-static": "^1.4.0",
     "neat-omega": "^3.0.1",
     "normalize.css": "^8.0.0",
-    "prismjs": "^1.11.0",
+    "prismjs": "^1.14.0",
     "sass-brunch": "^2.10.4",
     "spostcss-brunch": "^1",
     "uglify-js-brunch": "^2"
